@@ -1,0 +1,18 @@
+version: "3"
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - /app/node_modules
+      - .:/app
+    environment:
+      - NODE_ENV=development
+   #command: sh -c "yarn run develop"
+   #command: sh -c "gatsby develop"
+    # command: "
+    command: "cd mysite && npm install -g gatsby-cli && gatsby develop"
+
